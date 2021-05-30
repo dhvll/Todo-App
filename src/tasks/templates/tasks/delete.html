@@ -1,8 +1,10 @@
-<p>Are you sure you want to delete "{{item}}"?</p>
+<div class="center-column"></div>
+    <p>Are you sure you want to delete "{{item}}"?</p>
 
-<a href="{% url 'list' %}">Cancel</a>
+    <a class="btn btn-sm btn-danger" href="{% url 'list' %}">Cancel</a>
 
-<form method="POST" action="">
-    {% csrf_token %}
-    <input type="submit" name="Confirm" value="Submit">
-</form>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input type="submit" name="Confirm" value="Submit">
+    </form>
+</div>
