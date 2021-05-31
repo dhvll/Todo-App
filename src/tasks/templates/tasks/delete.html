@@ -1,10 +1,19 @@
-<div class="center-column"></div>
-    <p>Are you sure you want to delete "{{item}}"?</p>
+{% extends "base.html" %}
 
-    <a class="btn btn-sm btn-danger" href="{% url 'list' %}">Cancel</a>
+{% load static %}
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        <input type="submit" name="Confirm" value="Submit">
-    </form>
-</div>
+{% block content %}
+   
+    <div class="center-column">
+        <h3>Delete task</h3> 
+        
+        <p>Are you sure you want to delete "<b>{{item}}</b>"?</p>
+
+        <a class="btn btn-sm btn-danger" href="{% url 'list' %}">Cancel</a>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input class="btn btn-info" type="submit" name="Confirm" value="Submit">
+        </form>
+    </div>
+{% endblock content %}
